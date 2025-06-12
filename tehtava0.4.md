@@ -7,14 +7,14 @@ participant server
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
-    server-->>browser: HTTP 302 Redirect (uudelleenohjaus /notes-sivulle)
+    server-->>browser: HTTP 302 Redirect
     deactivate server
 
     Note right of browser: Selain tekee automaattisesti uuden pyynnön /notes-sivulle
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
-    server-->>browser: HTML document (päivitetty näkymä)
+    server-->>browser: HTML document
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
